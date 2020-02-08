@@ -2,31 +2,29 @@
 
 if __name__ == '__main__':
 
-    a = [1, 2, 3]
-    print(a)
-    print(*a)
-    print(type(print(*a)))
-    print(type(a))
+    a = [1, 2, 3, 4]
+    b = a[:3] # slicing
+    c = [a[x] for x in range(len(a) - 1)]  # [a[0], a[1], a[2]]
+    print(c)
+    people = {
+        'sinan': 'Turkey',
+        'daniel': 'spain',
+        'laura': 'Italy'
+    }
+    print(people['daniel'])
+    people['helene'] = 'France'
+    print(people)
+    for name, city in people.items():
+        print(name, city)
 
-    # Converting list to tuple
-    b = tuple(a)
-    print(type(b))
-    print(b)
-
-    #  Converting tuple tolist
-    z = list(b)
-    print(type(z))
-    print(z)
-
-    z.append(4)
-    print(z)
-    z[3] = 5
-    print(z)
-    z[len(z) - 1] = 6
-    print(z)
-    z[-1] = 7
-    print(z)
-    z.pop()
-    print(z)
-    z.pop()
-    print(z)
+    world_people = {'sinan', 'daniel', 'laura', 'sinan'}
+    w = set(['sinan', 'daniel', 'laura'])
+    print(world_people)
+    print(w)
+    french_people = {'helene'}
+    no_french = world_people - french_people
+    print(no_french)
+    aliens = {'mars'}
+    everyone = world_people | aliens
+    print(everyone)
+    print(sorted(list(everyone)))
