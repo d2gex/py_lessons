@@ -1,21 +1,32 @@
-def print_numbers(x, y, z):
-    print(x, y, z)
 
 
 if __name__ == '__main__':
-    _tuple = (1, 2, 3)
-    # _tuple[1] = 6 --> This is not possible because it is inmutable
-    tuple_1 = 1, 2, 3
-    print(type(tuple_1))
-    a = tuple_1[0]
-    b = tuple_1[1]
-    c = tuple_1[2]
-    print(a, b, c)
-    x, z, y = tuple_1
-    print(x, z, y)
-    x, *rest = tuple_1
-    print(x)
-    print(rest)
-    print(*rest)
-    print_numbers(*tuple_1)
-    print(type(tuple_1))
+
+    a = [1, 2, 3]
+    print(a)
+    print(*a)
+    print(type(print(*a)))
+    print(type(a))
+
+    # Converting list to tuple
+    b = tuple(a)
+    print(type(b))
+    print(b)
+
+    #  Converting tuple tolist
+    z = list(b)
+    print(type(z))
+    print(z)
+
+    z.append(4)
+    print(z)
+    z[3] = 5
+    print(z)
+    z[len(z) - 1] = 6
+    print(z)
+    z[-1] = 7
+    print(z)
+    z.pop()
+    print(z)
+    z.pop()
+    print(z)
