@@ -14,10 +14,8 @@ def check_login(username, password, credentials):
 
 
 def get_credentials(filepath):
-    lines = []
     with open(filepath, 'r') as fh:
-        for line in fh:
-            lines.append(line.strip('\n'))
+        lines = [line.strip('\n') for line in fh]
     login, login_value = lines[0].split(':')
     password, password_value = lines[-1].split(':')
     return {
